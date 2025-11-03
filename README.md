@@ -32,7 +32,7 @@ python3 -m pip install pycairo PyGObject
 
 ## 3️⃣ Set environment variables
 
-Append the following to your ~/.zshrc (or run once per session):
+Append the following to your `~/.zshrc` (or run once per session):
 
 ```bash
 # --- GStreamer environment ---
@@ -44,11 +44,13 @@ export PATH="/Library/Frameworks/GStreamer.framework/Commands:$PATH"
 ```
 
 Reload:
-`source ~/.zshrc`
+```bash
+source ~/.zshrc
+```
 
 ## 4️⃣ Create the RTSP server script
 
-Create a file named rtsp-server.py:
+Create a file named `rtsp-server.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -81,7 +83,9 @@ if __name__ == '__main__':
 ```
 
 Run it: 
-`python3 rtsp-server.py`
+```bash
+python3 rtsp-server.py
+```
 
 Expected output:
 `RTSP stream ready at rtsp://192.168.x.xxx:8554/test`
@@ -89,13 +93,17 @@ Expected output:
 ## 5️⃣ View the stream (same machine or another computer)
 ### Local test (same Mac)
 Open a second terminal:
-`gst-launch-1.0 rtspsrc location=rtsp://localhost:8554/test latency=60 ! decodebin ! autovideosink`
+```bash
+gst-launch-1.0 rtspsrc location=rtsp://localhost:8554/test latency=60 ! decodebin ! autovideosink
+```
 
 ### Remote test (e.g. PC)
 
 Replace the IP with your Mac’s LAN IP:
-`gst-launch-1.0 rtspsrc location=rtsp://192.168.x.xxx:8554/test latency=60 ! decodebin ! autovideosink`
-
+```bash
+gst-launch-1.0 rtspsrc location=rtsp://192.168.x.xxx:8554/test latency=60 ! decodebin ! autovideosink
+```
+---
 
 ## Troubleshooting
 
