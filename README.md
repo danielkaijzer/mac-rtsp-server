@@ -8,7 +8,7 @@ Useful for testing pipelines that normally read from an RTSP source (e.g., Pupil
 ## 1️⃣ Install GStreamer
 
 Download the **official GStreamer Runtime and Development packages** from:
-👉 [https://gstreamer.freedesktop.org/download/](https://gstreamer.freedesktop.org/download/)
+[https://gstreamer.freedesktop.org/download/](https://gstreamer.freedesktop.org/download/)
 
 Install both `.pkg` files:
 - `gstreamer-1.0-x86_64.pkg` (Runtime)
@@ -87,11 +87,11 @@ Expected output:
 `RTSP stream ready at rtsp://192.168.x.xxx:8554/test`
 
 ## 5️⃣ View the stream (same machine or another computer)
-### 🧪 Local test (same Mac)
+### Local test (same Mac)
 Open a second terminal:
 `gst-launch-1.0 rtspsrc location=rtsp://localhost:8554/test latency=60 ! decodebin ! autovideosink`
 
-### 💻 Remote test (e.g. PC)
+### Remote test (e.g. PC)
 
 Replace the IP with your Mac’s LAN IP:
 `gst-launch-1.0 rtspsrc location=rtsp://192.168.x.xxx:8554/test latency=60 ! decodebin ! autovideosink`
